@@ -40,14 +40,14 @@ app.post("/notes", async (req, res) => {
     try {
         const { title, content } = req.body;
 
-        // ✅ validation
+        //validation
         if (!title || !content) {
             return res.status(400).json({ message: "Title & content required" });
         }
 
         let summary;
 
-        // ✅ safe summary generation (with fallback)
+        //safe summary generation (with fallback)
         try {
             summary = await generateSummary(content);
         } catch (err) {
