@@ -30,7 +30,7 @@ const generateSummary = async (content) => {
         );
 
     } catch (err) {
-        console.error("❌ Gemini API error:");
+        console.error("Gemini API error:");
         console.error(err.response?.data || err.message);
         return "Summary not available";
     }
